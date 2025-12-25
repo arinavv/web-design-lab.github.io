@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ответы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <nav class="nav">
+        <div class="logo">To-Do DOM</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Задачи</a></li>
+            <li><a href="answers.html" class="active">Ответы</a></li>
+        </ul>
+        <div class="burger" id="burger">☰</div>
+    </nav>
+
+    <main class="container">
+        <h1>Контрольные вопросы</h1>
+
+        <div class="card">
+            <h3>1. Какие методы DOM используются?</h3>
+            <p>getElementById, createElement, appendChild, classList.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Как добавляется обработчик события?</h3>
+            <p>С помощью метода addEventListener.</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Как проверить, что поле не пустое?</h3>
+            <p>Проверка input.value.trim() === "".</p>
+        </div>
+
+        <div class="card">
+            <h3>4. Как отличаются выполненные задачи?</h3>
+            <p>Им добавляется класс completed (зачёркнутый текст).</p>
+        </div>
+
+        <div class="card">
+            <h3>5. Как сохранить задачи?</h3>
+            <p>Используется localStorage браузера.</p>
+        </div>
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
