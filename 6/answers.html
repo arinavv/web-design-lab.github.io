@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ответы: CSS Grid Layout</title>
+    <link rel="stylesheet" href="answers.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><span class="highlight">CSS Grid</span> Layout</h1>
+              
+                <a href="index.html" class="back-btn">← Назад к Grid примеру</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="questions-section">
+                <div class="question-card">
+                    <div class="question-number">1</div>
+                    <h2 class="question-title">Какими свойствами задаются количество и ширина столбцов в Grid-контейнере?</h2>
+                    <div class="answer">
+                        <p><strong>Основные свойства:</strong></p>
+                        <ul class="answer-list">
+                            <li><code>grid-template-columns</code> — определяет количество и ширину столбцов</li>
+                            <li><code>grid-template-rows</code> — определяет количество и высоту строк</li>
+                        </ul>
+                        <p><strong>Примеры значений:</strong></p>
+                        <pre><code>.container {
+  grid-template-columns: 200px 1fr 300px; /* 3 столбца */
+  grid-template-columns: repeat(4, 1fr); /* 4 равных столбца */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="question-card">
+             
+                    <h2 class="question-title">Какой метод можно использовать, чтобы равномерно распределить доступное пространство между столбцами или строками?</h2>
+                    <div class="answer">
+                        <p><strong>Используйте единицу измерения <code>fr</code> (fraction)</strong>:</p>
+                        <ul class="answer-list">
+                            <li><code>1fr</code> — одна доля доступного пространства</li>
+                            <li><code>2fr 1fr</code> — второй столбец в 2 раза шире первого</li>
+                        </ul>
+                        <p><strong>Пример:</strong></p>
+                        <pre><code>.container {
+  grid-template-columns: 1fr 2fr 1fr; /* средний в 2 раза шире */
+  grid-template-rows: 1fr 1fr; /* равные строки */
+}</code></pre>
+                        <div class="grid-demo">
+                            <div class="demo-item">1fr</div>
+                            <div class="demo-item">2fr</div>
+                            <div class="demo-item">1fr</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+ 
+                    <h2 class="question-title">Какие функции CSS Grid позволяют автоматически подстраивать количество колонок или строк под размер экрана?</h2>
+                    <div class="answer">
+                        <p><strong>3 ключевые функции:</strong></p>
+                        <ul class="answer-list">
+                            <li><code>repeat()</code> — повторение шаблона</li>
+                            <li><code>minmax(min, max)</code> — диапазон размеров</li>
+                            <li><code>auto-fit</code> / <code>auto-fill</code> — автоматическое заполнение</li>
+                        </ul>
+                        <p><strong>Пример адаптивной сетки:</strong></p>
+                        <pre><code>.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}</code></pre>
+                        <p><strong>Разница:</strong></p>
+                        <ul class="answer-list">
+                            <li><code>auto-fit</code> — растягивает элементы на всё пространство</li>
+                            <li><code>auto-fill</code> — сохраняет пустые треки</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question-card">
+            
+                    <h2 class="question-title">Каким свойством можно задать промежутки между элементами Grid?</h2>
+                    <div class="answer">
+                        <p><strong>Свойство <code>gap</code> (ранее grid-gap):</strong></p>
+                        <ul class="answer-list">
+                            <li><code>gap: 20px;</code> — одинаковые промежутки между строками и столбцами</li>
+                            <li><code>row-gap: 15px;</code> — только между строками</li>
+                            <li><code>column-gap: 10px;</code> — только между столбцами</li>
+                            <li><code>gap: 20px 10px;</code> — первое значение для строк, второе для столбцов</li>
+                        </ul>
+                        <pre><code>.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* заменяет grid-gap */
+}
+
+/* Для поддержки старых браузеров */
+.container {
+  grid-gap: 20px; /* устаревшее */
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                 
+                    <h2 class="question-title">Как разместить элемент в нескольких строках или столбцах Grid?</h2>
+                    <div class="answer">
+                        <p><strong>Свойства для размещения элементов:</strong></p>
+                        <ul class="answer-list">
+                            <li><code>grid-column-start</code> / <code>grid-column-end</code></li>
+                            <li><code>grid-row-start</code> / <code>grid-row-end</code></li>
+                            <li><strong>Короткая запись:</strong> <code>grid-column: 1 / 3;</code> (с 1 по 3 столбец)</li>
+                            <li><strong>Ещё короче:</strong> <code>grid-column: span 2;</code> (занять 2 столбца)</li>
+                        </ul>
+                        <pre><code>.item {
+  /* Занимает 2 столбца и 3 строки */
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+}
+
+/* Альтернативная запись */
+.item {
+  grid-area: 1 / 1 / 4 / 3; /* row-start / col-start / row-end / col-end */
+}</code></pre>
+                        <div class="span-demo">
+                            <div class="span-item">Обычный</div>
+                            <div class="span-item span-wide">Занимает 2 колонки</div>
+                            <div class="span-item">Обычный</div>
+                            <div class="span-item span-tall">Занимает 2 строки</div>
+                            <div class="span-item">Обычный</div>
+                            <div class="span-item">Обычный</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+               
+                    <h2 class="question-title">Найдите в сети красивое применение Grid</h2>
+                    <div class="answer">
+                        <p><strong>Красивые примеры использования CSS Grid:</strong></p>
+                        <ul class="answer-list">
+                            <li><strong>Галереи изображений</strong> с разными размерами (masonry layout)</li>
+                            <li><strong>Сетки для журналов/блогов</strong> с асимметричными блоками</li>
+                            <li><strong>Интерактивные дашборды</strong> с перетаскиваемыми виджетами</li>
+                            <li><strong>Карточки товаров</strong> с адаптивным расположением</li>
+                        </ul>
+                        
+
+
+</body>
+</html>
