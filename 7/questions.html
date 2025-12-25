@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контрольные вопросы - Лабораторная работа №7</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .questions-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+        
+        .question-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+        
+        .question-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .question-num {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .question-title {
+            font-size: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .answer {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .answer-code {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Контрольные вопросы</h1>
+            <p class="subtitle">Лабораторная работа №7 - Простые скрипты</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-btn">← Назад к задачам</a>
+            </nav>
+        </header>
+
+        <main class="questions-container">
+            <!-- Вопрос 1 -->
+            <div class="question-item">
+                <div class="question-header">
+                    <div class="question-num">1</div>
+                    <h3 class="question-title">Как проверить, является ли число целым?</h3>
+                </div>
+                <div class="answer">
+                    <p><strong>Основные способы:</strong></p>
+                    <div class="answer-code">
+// Способ 1: Number.isInteger()
+Number.isInteger(42);    // true
+Number.isInteger(3.14);  // false
+
+// Способ 2: Остаток от деления
+function isInteger(num) {
+    return num % 1 === 0;
+}
+
+// Способ 3: Math.floor()
+function isInteger2(num) {
+    return Math.floor(num) === num;
+}
+                    </div>
+                    <p><strong>Рекомендация:</strong> Использовать <code>Number.isInteger()</code> — это современный и надежный способ.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="question-item">
+                <div class="question-header">
+                    <div class="question-num">2</div>
+                    <h3 class="question-title">Как извлечь подстроку из строки?</h3>
+                </div>
+                <div class="answer">
+                    <p><strong>Методы для извлечения подстроки:</strong></p>
+                    <div class="answer-code">
+const str = "JavaScript";
+
+// substring(start, end) - от start до end
+str.substring(0, 4);     // "Java"
+
+// slice(start, end) - аналогично, но поддерживает отрицательные индексы
+str.slice(4);           // "Script"
+str.slice(-6);          // "Script"
+
+// substr(start, length) - от start заданной длины (устарел)
+str.substr(4, 6);       // "Script"
+                    </div>
+                    <p><strong>Пример функции:</strong></p>
+                    <div class="answer-code">
+function getSubstring(str, start, length) {
+    return str.substring(start, start + length);
+}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="question-item">
+                <div class="question-header">
+                    <div class="question-num">3</div>
+                    <h3 class="question-title">Что такое операция "исключающее ИЛИ" (XOR)?</h3>
+                </div>
+                <div class="answer">
+                    <p><strong>XOR</strong> возвращает <code>true</code> если операнды разные, и <code>false</code> если одинаковые.</p>
+                    <div class="answer-code">
+// Таблица истинности:
+// true XOR true = false
+// true XOR false = true
+// false XOR true = true
+// false XOR false = false
+
+// Реализации:
+function xor(a, b) {
+    return a !== b;               // Самый простой способ
+}
+
+function xor2(a, b) {
+    return (a || b) && !(a && b); // Через логические операторы
+}
+
+function xor3(a, b) {
+    return Boolean(a ^ b);        // Через побитовый XOR
+}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="question-item">
+                <div class="question-header">
+                    <div class="question-num">4</div>
+                    <h3 class="question-title">Как проверить наличие свойства в объекте?</h3>
+                </div>
+                <div class="answer">
+                    <p><strong>Основные способы:</strong></p>
+                    <div class="answer-code">
+const obj = { name: "John", age: 30 };
+
+// 1. Оператор in (проверяет и унаследованные свойства)
+'name' in obj;          // true
+'toString' in obj;      // true (унаследовано)
+
+// 2. hasOwnProperty() (только собственные свойства)
+obj.hasOwnProperty('name');     // true
+obj.hasOwnProperty('toString'); // false
+
+// 3. Сравнение с undefined (не работает для undefined значений)
+obj.name !== undefined;  // true
+obj.city !== undefined;  // false
+                    </div>
+                    <p><strong>Разница:</strong> <code>in</code> проверяет все свойства (включая унаследованные), <code>hasOwnProperty()</code> — только собственные.</p>
+                </div>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="question-item">
+                <div class="question-header">
+                    <div class="question-num">5</div>
+                    <h3 class="question-title">Чем отличаются forEach и map?</h3>
+                </div>
+                <div class="answer">
+                    <p><strong>Основные различия:</strong></p>
+                    <div class="answer-code">
+const numbers = [1, 2, 3];
+
+// forEach - выполняет операцию для каждого элемента
+// НЕ возвращает новый массив
+const result1 = numbers.forEach(n => console.log(n));  // undefined
+
+// map - возвращает новый массив с результатами
+const result2 = numbers.map(n => n * 2);  // [2, 4, 6]
+                    </div>
+                    <p><strong>Когда использовать:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>forEach</strong> — для побочных эффектов (логирование, изменение DOM)</li>
+                        <li><strong>map</strong> — для преобразования данных и цепочек методов</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="index.html" class="back-btn">← Вернуться к задачам</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

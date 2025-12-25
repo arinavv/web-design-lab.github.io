@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №7 - Вариант 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Лабораторная работа №7</h1>
+            <p class="subtitle">Вариант 2 - Простые скрипты на JavaScript</p>
+            <nav class="main-nav">
+                <a href="#tasks" class="nav-btn">Задачи</a>
+                <a href="questions.html" class="nav-btn">Контрольные вопросы</a>
+            </nav>
+        </header>
+
+        <main id="tasks">
+            <!-- Задача 1 -->
+            <section class="task-card">
+                <h3>Задача 1: Умножение чисел</h3>
+                <div class="code-block">
+function multiply(a, b) {
+    return a * b;
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testMultiply()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task1')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task1" class="results"></div>
+            </section>
+
+            <!-- Задача 2 -->
+            <section class="task-card">
+                <h3>Задача 2: Удаление пробелов</h3>
+                <div class="code-block">
+function trimSpaces(str) {
+    return str.trim();
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testTrimSpaces()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task2')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task2" class="results"></div>
+            </section>
+
+            <!-- Задача 3 -->
+            <section class="task-card">
+                <h3>Задача 3: Сравнение логических значений</h3>
+                <div class="code-block">
+function isSame(a, b) {
+    return a === b;
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testIsSame()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task3')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task3" class="results"></div>
+            </section>
+
+            <!-- Задача 4 -->
+            <section class="task-card">
+                <h3>Задача 4: Проверка существования свойства</h3>
+                <div class="code-block">
+function hasKey(obj, key) {
+    return key in obj;
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testHasKey()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task4')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task4" class="results"></div>
+            </section>
+
+            <!-- Задача 5 -->
+            <section class="task-card">
+                <h3>Задача 5: Получение последнего элемента массива</h3>
+                <div class="code-block">
+function getLastElement(array) {
+    if (array.length === 0) return undefined;
+    return array[array.length - 1];
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testGetLastElement()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task5')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task5" class="results"></div>
+            </section>
+
+            <!-- Задача 6 -->
+            <section class="task-card">
+                <h3>Задача 6: Проверка чётных чисел (forEach)</h3>
+                <div class="code-block">
+function logEven(array) {
+    array.forEach(function(element) {
+        if (typeof element === 'number' && element % 2 === 0) {
+            console.log(element);
+        }
+    });
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testLogEven()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task6')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task6" class="results"></div>
+                <div id="console6" class="console-output"></div>
+            </section>
+
+            <!-- Задача 7 -->
+            <section class="task-card">
+                <h3>Задача 7: Удвоение элементов массива (map)</h3>
+                <div class="code-block">
+function doubleElements(array) {
+    return array.map(function(element) {
+        return element * 2;
+    });
+}
+                </div>
+                <div class="task-controls">
+                    <button onclick="testDoubleElements()" class="btn test-btn">Тестировать</button>
+                    <button onclick="clearResults('task7')" class="btn clear-btn">Очистить</button>
+                </div>
+                <div id="task7" class="results"></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="controls">
+                <button onclick="testAll()" class="btn all-btn">Тестировать всё</button>
+                <button onclick="clearAll()" class="btn clear-all-btn">Очистить всё</button>
+            </div>
+            <a href="questions.html" class="nav-btn questions-link">Перейти к вопросам →</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
