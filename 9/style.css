@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #2d3748;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.header p {
+    margin-top: 8px;
+    opacity: 0.9;
+}
+
+/* Link button */
+.link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    background: white;
+    color: #5a67d8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-btn:hover {
+    background: #edf2f7;
+}
+
+/* Main */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    gap: 25px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+    color: #5a67d8;
+}
+
+/* Buttons */
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: #5a67d8;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #434190;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Lists */
+ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Output */
+pre {
+    background: #edf2f7;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 24px;
+    }
+}

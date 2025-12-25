@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная №9 — Асинхронный JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+    <header class="header">
+        <h1>Асинхронный JavaScript</h1>
+        <p>Лабораторная работа №9</p>
+
+        <!-- КНОПКА ПЕРЕХОДА -->
+        <a href="answers.html" class="link-btn">Ответы на вопросы</a>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>1. Асинхронные задачи</h2>
+            <button id="runTasks">Запустить задачи</button>
+            <pre id="taskOutput"></pre>
+        </section>
+
+        <section class="card">
+            <h2>2. Посты (JSONPlaceholder)</h2>
+            <button id="loadPosts">Загрузить посты</button>
+            <ul id="posts"></ul>
+        </section>
+
+        <section class="card">
+            <h2>3. Курсы валют</h2>
+            <div class="btn-group">
+                <button id="loadRatesProxy">Belarusbank (proxy)</button>
+                <button id="loadNBRB">НБРБ</button>
+            </div>
+            <ul id="rates"></ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span>async / await • fetch • Promise</span>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
