@@ -1,1 +1,1 @@
-https://arinavv.github.io/web-design-lab/WD/1
+https://arinavv.github.io/web-design-lab/1
