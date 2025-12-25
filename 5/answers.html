@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ответы: CSS Positioning & Flexbox</title>
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Ответы на вопросы по CSS</h1>
+            <a href="index.html" class="back-btn">← Вернуться к заданиям</a>
+        </header>
+
+        <main class="questions-grid">
+            <article class="question-card">
+    
+                <h2 class="question-title">Какие значения может принимать свойство position и как они влияют на положение элемента?</h2>
+                <div class="answer">
+                    <p><strong>5 значений position:</strong></p>
+                    <ul>
+                        <li><code>static</code> (по умолчанию) — элемент в потоке документа</li>
+                        <li><code>relative</code> — смещается относительно своего обычного положения (top, left работают)</li>
+                        <li><code>absolute</code> — вырывается из потока, позиционируется относительно ближайшего positioned предка</li>
+                        <li><code>fixed</code> — фиксируется относительно окна браузера (не скроллится)</li>
+                        <li><code>sticky</code> — гибрид relative и fixed (прилипает при скролле)</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="question-card">
+              
+                <h2 class="question-title">Разница между display: block, inline, inline-block и none</h2>
+                <div class="answer">
+                    <ul>
+                        <li><code>block</code> — занимает всю ширину, начинается с новой строки (div, p, h1)</li>
+                        <li><code>inline</code> — только необходимую ширину, в строке (span, a, strong)</li>
+                        <li><code>inline-block</code> — как inline, но можно задавать ширину/высоту и padding/margin</li>
+                        <li><code>none</code> — элемент полностью скрыт, не занимает место</li>
+                    </ul>
+                    <p><strong>Пример:</strong></p>
+                    <pre><code>button { display: inline-block; }
+nav li { display: inline; }
+.popup { display: none; } /* показывается через JS */</code></pre>
+                </div>
+            </article>
+
+            <article class="question-card">
+             
+                <h2 class="question-title">Блочная модель CSS и основные свойства</h2>
+                <div class="answer">
+                    <p><strong>Блочная модель состоит из:</strong></p>
+                    <ul>
+                        <li>Содержимое (content) — ширина/высота</li>
+                        <li>Внутренние отступы (padding)</li>
+                        <li>Граница (border)</li>
+                        <li>Внешние отступы (margin)</li>
+                    </ul>
+                    <p><strong>Формула:</strong> element width = width + padding + border</p>
+                    <p><strong>box-sizing:</strong></p>
+                    <ul>
+                        <li><code>content-box</code> (по умолчанию) — padding/border добавляются к width</li>
+                        <li><code>border-box</code> — padding/border включены в width</li>
+                    </ul>
+                    <pre><code>div {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+    box-sizing: border-box; /* общая ширина = 200px */
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="question-card">
+              
+                <h2 class="question-title">Как работает flex-direction в flex-контейнере?</h2>
+                <div class="answer">
+                    <p><code>flex-direction</code> определяет направление основной оси:</p>
+                    <ul>
+                        <li><code>row</code> (по умолчанию) — слева направо</li>
+                        <li><code>row-reverse</code> — справа налево</li>
+                        <li><code>column</code> — сверху вниз</li>
+                        <li><code>column-reverse</code> — снизу вверх</li>
+                    </ul>
+                    <div class="flex-example" style="flex-direction: row;">
+                        <div class="flex-item">1</div>
+                        <div class="flex-item">2</div>
+                        <div class="flex-item">3</div>
+                    </div>
+                    <p><strong>Основная ось</strong> — направление, указанное в flex-direction</p>
+                    <p><strong>Поперечная ось</strong> — перпендикулярна основной</p>
+                </div>
+            </article>
+
+            <article class="question-card">
+     
+                <h2 class="question-title">Управление расположением в flex-контейнере (align-items и justify-content)</h2>
+                <div class="answer">
+                    <p><strong>justify-content</strong> — выравнивание по основной оси:</p>
+                    <ul>
+                        <li><code>flex-start</code>, <code>flex-end</code>, <code>center</code></li>
+                        <li><code>space-between</code> — равномерно, без отступов по краям</li>
+                        <li><code>space-around</code> — равномерно, с отступами по краям</li>
+                        <li><code>space-evenly</code> — равномерно, включая края</li>
+                    </ul>
+                    
+                    <p><strong>align-items</strong> — выравнивание по поперечной оси:</p>
+                    <ul>
+                        <li><code>stretch</code> (по умолчанию) — растягивает</li>
+                        <li><code>flex-start</code>, <code>flex-end</code>, <code>center</code></li>
+                        <li><code>baseline</code> — по базовой линии текста</li>
+                    </ul>
+                    
+                    <pre><code>.container {
+    display: flex;
+    justify-content: center;    /* по горизонтали */
+    align-items: center;        /* по вертикали */
+    height: 300px;
+}</code></pre>
+                </div>
+            </article>
+
+            <article class="question-card">
+         
+                <h2 class="question-title">Красивое применение flexbox</h2>
+                <div class="answer">
+                    <p><strong>Примеры красивых применений flexbox:</strong></p>
+                    <ul>
+                        <li><strong>Центрирование</strong> — вертикальное и горизонтальное выравнивание</li>
+                        <li><strong>Адаптивные навигационные меню</strong></li>
+                        <li><strong>Карточки товаров</strong> одинаковой высоты</li>
+                        <li><strong>Стики-футер</strong> (прижатый к низу)</li>
+                        <li><strong>Сложные сетки</strong> с разными размерами элементов</li>
+                    </ul>
+                   
+                    <p><strong>Пример красивой галереи:</strong></p>
+                    <pre><code>.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.photo-card {
+    flex: 1 1 300px;
+    max-width: 400px;
+}</code></pre>
+                </div>
+            </article>
+        </main>
+
+
+       
+    </div>
+</body>
+</html>
