@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №10 - Работа с jQuery</title>
+    <!-- Подключаем jQuery через CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Подключаем CSS файл -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="main-title">Лабораторная работа №10</h1>
+            <h2>Работа с библиотекой jQuery</h2>
+        </header>
+        
+        <!-- Задание 1 -->
+        <div class="task-container">
+            <h3>Задание 1. Основы селекторов и манипуляций</h3>
+            <p>Список дел:</p>
+            <ul class="todo-list" id="todo-list">
+                <li>Изучить HTML</li>
+                <li>Изучить CSS</li>
+                <li>Изучить JavaScript</li>
+                <li>Создать веб-страницу</li>
+                <li>Протестировать в браузерах</li>
+                <li>Изучить jQuery</li>
+            </ul>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" id="task1-btn">Выполнить задание 1</button>
+                <button class="btn btn-secondary" id="reset-btn">Сбросить изменения</button>
+            </div>
+        </div>
+        
+        <!-- Задание 2 -->
+        <div class="task-container">
+            <h3>Задание 2. Работа с событиями и формами</h3>
+            <form id="user-form">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Введите ваше имя">
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль">
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Отправить</button>
+                    <button type="button" class="btn btn-secondary" id="clear-form-btn">Очистить форму</button>
+                </div>
+            </form>
+            
+            <div class="greeting" id="greeting-message"></div>
+        </div>
+        
+        <!-- Дополнительные элементы jQuery -->
+        <div class="task-container additional-features">
+            <h3>Дополнительные элементы jQuery</h3>
+            
+            <div class="feature">
+                <h4>Анимация элементов</h4>
+                <p>Нажмите на кнопку, чтобы увидеть анимацию:</p>
+                <div id="animated-box"></div>
+                <button class="btn btn-primary" id="animate-btn">Запустить анимацию</button>
+            </div>
+            
+            <div class="feature">
+                <h4>Показать/скрыть контент</h4>
+                <button class="btn btn-primary" id="toggle-btn">Показать текст</button>
+                <div id="toggle-content">
+                    <p>Это дополнительный контент, который можно скрыть или показать с помощью jQuery.</p>
+                    <p>Методы <span class="highlight">.show()</span>, <span class="highlight">.hide()</span> и <span class="highlight">.toggle()</span> позволяют управлять видимостью элементов.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <h4>Динамическое добавление контента</h4>
+                <button class="btn btn-primary" id="add-content-btn">Добавить элемент</button>
+                <div id="dynamic-content"></div>
+            </div>
+        </div>
+        
+        <!-- Краткие ответы на контрольные вопросы -->
+        <div class="questions-container">
+            <h3>Ответы на контрольные вопросы</h3>
+            
+            <div class="question">
+                <h4>1. Что такое jQuery? Каковы основные преимущества использования этой библиотеки?</h4>
+                <div class="answer">
+                    <p><span class="highlight">jQuery</span> — JavaScript-библиотека для упрощения работы с DOM, событиями, анимацией и AJAX.</p>
+                    <p><strong>Преимущества:</strong> кросс-браузерность, простой синтаксис, цепочки методов, множество плагинов, упрощенная работа с DOM.</p>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h4>2. Что означает символ $ в коде? Можно ли заменить его?</h4>
+                <div class="answer">
+                    <p><span class="highlight">$</span> — псевдоним для функции <span class="highlight">jQuery()</span>.</p>
+                    <p><strong>Да, можно заменить</strong> с помощью <span class="highlight">jQuery.noConflict()</span> для избежания конфликтов с другими библиотеками.</p>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h4>3. Зачем нужен блок $(document).ready()? Чем он отличается от window.onload?</h4>
+                <div class="answer">
+                    <p><span class="highlight">$(document).ready()</span> выполняется когда DOM готов, но ресурсы могут еще загружаться.</p>
+                    <p><strong>Отличие от window.onload:</strong> <span class="highlight">window.onload</span> ждет полной загрузки всех ресурсов.</p>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h4>4. Что такое CDN? Плюсы и минусы подключения jQuery через CDN?</h4>
+                <div class="answer">
+                    <p><span class="highlight">CDN</span> — сеть распределенных серверов для доставки контента.</p>
+                    <p><strong>Плюсы:</strong> скорость загрузки, кэширование, снижение нагрузки на сервер.</p>
+                    <p><strong>Минусы:</strong> зависимость от CDN-сервера, проблемы при отсутствии интернета.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <!-- Подключаем JavaScript файл -->
+    <script src="script.js"></script>
+</body>
+</html>
