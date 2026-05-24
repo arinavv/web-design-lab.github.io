@@ -2,51 +2,618 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Лабораторная №9 — Асинхронный JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DNA | Визуальный код вашего бренда</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="page">
     <header class="header">
-        <h1>Асинхронный JavaScript</h1>
-        <p>Лабораторная работа №9</p>
-
-        <!-- КНОПКА ПЕРЕХОДА -->
-        <a href="answers.html" class="link-btn">Ответы на вопросы</a>
+        <div class="logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4C14 6 13 9.5 13 12.5C13 15.5 14 19 16 21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M8 4C10 6 11 9.5 11 12.5C11 15.5 10 19 8 21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <span>AI DNA</span>
+        </div>
+        <nav class="nav">
+            <a href="#why-us" class="nav-link">Почему мы</a>
+            <a href="#process" class="nav-link">Процесс</a>
+            <a href="#cases" class="nav-link">Кейсы</a>
+            <a href="#pricing" class="nav-link">Тарифы</a>
+            <a href="#contact" class="btn-apple-sm">Начать проект</a>
+        </nav>
     </header>
 
-    <main class="container">
-
-        <section class="card">
-            <h2>1. Асинхронные задачи</h2>
-            <button id="runTasks">Запустить задачи</button>
-            <pre id="taskOutput"></pre>
-        </section>
-
-        <section class="card">
-            <h2>2. Посты (JSONPlaceholder)</h2>
-            <button id="loadPosts">Загрузить посты</button>
-            <ul id="posts"></ul>
-        </section>
-
-        <section class="card">
-            <h2>3. Курсы валют</h2>
-            <div class="btn-group">
-                <button id="loadRatesProxy">Belarusbank (proxy)</button>
-                <button id="loadNBRB">НБРБ</button>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="reveal">Ваш бренд.<br><span class="gradient-text">Ваш уникальный код.</span></h1>
+                <p class="reveal">Мы дешифруем смыслы вашего бизнеса и превращаем их в безупречный визуальный код для нейросетей нового поколения.</p>
+                <div class="hero-btns reveal">
+                    <button id="main-dna-btn" class="btn-apple">
+                        <span class="btn-text">Создать DNA</span>
+                        <span class="btn-loader"></span>
+                    </button>
+                    <a href="#cases" class="btn-secondary">Смотреть кейсы →</a>
+                </div>
             </div>
-            <ul id="rates"></ul>
         </section>
 
+        <section id="why-us" class="why-us">
+            <div class="section-header reveal">
+                <label>Почему мы</label>
+                <h2>Создаём визуальный код, который работает.</h2>
+            </div>
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-number">240+</div>
+                    <div class="stat-label">разработанных промптов</div>
+                    <div class="stat-desc">для разных ниш: от fashion до deep tech</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">уникальных стилей</div>
+                    <div class="stat-desc">в собственной библиотеке AI DNA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">точность попадания</div>
+                    <div class="stat-desc">по визуальному брифу клиента</div>
+                </div>
+            </div>
+            <div class="features-grid reveal">
+                <div class="feature-item">
+                    <div class="feature-icon">🧬</div>
+                    <h3>Глубокая семантика</h3>
+                    <p>Анализируем архетипы, ценности и визуальные маркеры, а не просто «красивые слова».</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡️</div>
+                    <h3>Промпт-инжиниринг 6.1</h3>
+                    <p>Настраиваем под Midjourney v6.1, DALL-E 3 и локальные LoRA-модели.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Масштабирование</h3>
+                    <p>Ваш стиль будет работать на сотнях генераций без потери идентичности.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <h3>Готовый гайд</h3>
+                    <p>Документация и чек-лист для команды: как использовать промпты.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="process">
+            <div class="section-header reveal">
+                <label>Методология</label>
+                <h2>5 шагов к вашему визуальному ДНК.</h2>
+            </div>
+            <div class="methodology-row row-2 reveal">
+                <div class="methodology-card">
+                    <div class="step-number">01</div>
+                    <h3>Генетический анализ</h3>
+                    <div class="step-sub">Архетипы и визуальные маркеры</div>
+                    <ul class="step-details">
+                        <li>Бриф-интервью (30–40 мин) с командой бренда</li>
+                        <li>Определяем 3–5 ключевых визуальных слов</li>
+                        <li>Собираем мудборд референсов</li>
+                    </ul>
+                    <div class="step-outcome">→ Результат: точный бриф и стилевой вектор</div>
+                    <div class="step-duration">⏱ 1–2 дня</div>
+                </div>
+                <div class="methodology-card">
+                    <div class="step-number">02</div>
+                    <h3>Кодинг</h3>
+                    <div class="step-sub">Создание структурных промптов</div>
+                    <ul class="step-details">
+                        <li>Пишем 5–7 вариантов промптов под разные сценарии</li>
+                        <li>Встраиваем параметры освещения, композиции, материалов</li>
+                        <li>Добавляем негативные промпты (что исключить)</li>
+                    </ul>
+                    <div class="step-outcome">→ Результат: библиотека промптов с комментариями</div>
+                    <div class="step-duration">⏱ 2–3 дня</div>
+                </div>
+            </div>
+            <div class="methodology-row row-3 reveal">
+                <div class="methodology-card">
+                    <div class="step-number">03</div>
+                    <h3>Тьюнинг</h3>
+                    <div class="step-sub">Адаптация под Midjourney v6.1</div>
+                    <ul class="step-details">
+                        <li>Тестируем на 20+ генерациях по каждому промпту</li>
+                        <li>Добиваемся стабильного стиля при смене объектов</li>
+                        <li>Фиксируем оптимальные параметры (--stylize, --chaos и др.)</li>
+                    </ul>
+                    <div class="step-outcome">→ Результат: гарантия воспроизводимости стиля</div>
+                    <div class="step-duration">⏱ 1–2 дня</div>
+                </div>
+                <div class="methodology-card">
+                    <div class="step-number">04</div>
+                    <h3>Масштабирование</h3>
+                    <div class="step-sub">Система генерации контента</div>
+                    <ul class="step-details">
+                        <li>Передаём готовые .txt-файлы промптов + гайд</li>
+                        <li>Обучаем вашу команду (1 ч zoom-сессия)</li>
+                        <li>(опционально) Интегрируем в ваш пайплайн через API</li>
+                    </ul>
+                    <div class="step-outcome">→ Результат: вы сами генерируете сотни единиц в едином стиле</div>
+                    <div class="step-duration">⏱ 0,5–1 день</div>
+                </div>
+                <div class="methodology-card">
+                    <div class="step-number">05</div>
+                    <h3>Поддержка и итерации</h3>
+                    <div class="step-sub">Гарантия стабильности</div>
+                    <ul class="step-details">
+                        <li>2 недели бесплатной поддержки после сдачи</li>
+                        <li>Правки промптов (до 3 итераций) без доплат</li>
+                        <li>Доступ в закрытый чат с AI-инженером</li>
+                    </ul>
+                    <div class="step-outcome">→ Результат: долгосрабочий инструмент, а не разовый файл</div>
+                    <div class="step-duration">⏱ 14 дней поддержки</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="section-header reveal">
+                <label>Процесс</label>
+                <h2>Как мы работаем: от заявки до результата</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <div class="step-number">01</div>
+                    <h3>Заявка и бриф</h3>
+                    <p>Вы оставляете заявку на сайте или пишете в Telegram. Мы созваниваемся на 15–20 минут, обсуждаем задачи и визуальные ориентиры.</p>
+                    <div class="step-duration">⏱ 1 день</div>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-number">02</div>
+                    <h3>Анализ и кодинг</h3>
+                    <p>Проводим генетический анализ бренда, разрабатываем и тестируем промпты. Вы получаете промежуточные варианты для обратной связи.</p>
+                    <div class="step-duration">⏱ 3–5 дней</div>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-number">03</div>
+                    <h3>Передача и обучение</h3>
+                    <p>Передаём библиотеку промптов, гайд по использованию и проводим 1-часовую zoom-сессию для вашей команды.</p>
+                    <div class="step-duration">⏱ 1 день</div>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-number">04</div>
+                    <h3>Поддержка и масштабирование</h3>
+                    <p>2 недели бесплатных правок и консультаций. При необходимости интегрируем промпты в ваш пайплайн или дообучаем LoRA.</p>
+                    <div class="step-duration">⏱ 14 дней поддержки</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ОБНОВЛЁННАЯ СЕКЦИЯ КЕЙСОВ С ИЗОБРАЖЕНИЯМИ -->
+        <section id="cases" class="showcase">
+            <div class="section-header reveal">
+                <label>Портфолио</label>
+                <h2>Манифесты стиля.</h2>
+            </div>
+            <div class="slider-container">
+                <button class="slider-arrow arrow-left" aria-label="Предыдущий">←</button>
+                <div class="slider-track" id="slider-track">
+                    <!-- Кейс 1: Nordic Tech -->
+                    <div class="showcase-card slider-item case-clickable" data-case="case1">
+                        <div class="img-box">
+                            <img src="images/Nordic Tech.png" alt="Nordic Tech" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="card-info">
+                            <h4>Minimalism 2.0</h4>
+                            <p>MJ v6.1 | [Code: NT-44]</p>
+                            <div class="case-description">Разработали систему промптов для генерации 100+ постеров в едином стиле за 2 дня.</div>
+                        </div>
+                    </div>
+                    <!-- Кейс 2: Neo Motif -->
+                    <div class="showcase-card slider-item case-clickable" data-case="case2">
+                        <div class="img-box">
+                            <img src="images/Neo Motif.png" alt="Neo Motif" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="card-info">
+                            <h4>Belarus DNA</h4>
+                            <p>MJ v6.1 | [Code: BY-01]</p>
+                            <div class="case-description">Создали визуальный код для национального бренда одежды — узнаваемость выросла на 35%.</div>
+                        </div>
+                    </div>
+                    <!-- Кейс 3: Cyber Ethno -->
+                    <div class="showcase-card slider-item case-clickable" data-case="case3">
+                        <div class="img-box">
+                            <img src="images/Cyber Ethno.png" alt="Cyber Ethno" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="card-info">
+                            <h4>Digital Folk</h4>
+                            <p>MJ v6.1 | [Code: ETH-09]</p>
+                            <div class="case-description">Объединили этнику и киберпанк для музыкального фестиваля — 50+ уникальных афиш.</div>
+                        </div>
+                    </div>
+                    <!-- Кейс 4: Quantum Arc -->
+                    <div class="showcase-card slider-item case-clickable" data-case="case4">
+                        <div class="img-box">
+                            <img src="images/Quantum Arc.png" alt="Quantum Arc" style="width:100%; height:100%; object-fit:cover;">
+                        </div>
+                        <div class="card-info">
+                            <h4>Future Abstract</h4>
+                            <p>MJ v6.1 | [Code: QA-12]</p>
+                            <div class="case-description">Промпты для абстрактной графики — использованы в рекламной кампании и AR-фильтрах.</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow arrow-right" aria-label="Следующий">→</button>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="section-header reveal">
+                <label>Отзывы</label>
+                <h2>Что говорят клиенты</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #0071e3, #2997ff);">А</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">“Промпты от AI DNA изменили наш подход к контенту. Теперь мы генерируем сотни уникальных изображений за считанные часы.”</p>
+                        <div class="testimonial-author">
+                            <strong>Алексей Смирнов</strong>
+                            <span>Art Director, NordTech</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a);">М</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">“Сотрудничество с AI DNA — это полное погружение в ДНК бренда. Ребята создали LoRA под нашу айдентику.”</p>
+                        <div class="testimonial-author">
+                            <strong>Мария Волочкова</strong>
+                            <span>CEO, Neo Motif</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">Д</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">“Быстро, профессионально, и главное — после обучения мы сами управляем генерациями. Получили не просто промпты, а готовую систему.”</p>
+                        <div class="testimonial-author">
+                            <strong>Денис Кравцов</strong>
+                            <span>Marketing Lead, Belarus DNA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ec489a, #db2777);">Е</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">“Визуальный код, который они создали, превзошёл ожидания. Теперь наш бренд узнают с первого взгляда.”</p>
+                        <div class="testimonial-author">
+                            <strong>Елена Ветрова</strong>
+                            <span>Brand Manager, Quantum Arc</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">И</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">“Спасибо за чёткую документацию и обучение. Наша команда легко освоила промпты и теперь создаёт контент в 10 раз быстрее.”</p>
+                        <div class="testimonial-author">
+                            <strong>Игорь Тополев</strong>
+                            <span>Product Owner, TechStyle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-avatar" style="background: linear-gradient(135deg, #ef4444, #dc2626);">С</div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">“Отличный сервис и поддержка. LoRA, которую сделали ребята, до сих пор используется во всех наших кампаниях.”</p>
+                        <div class="testimonial-author">
+                            <strong>Светлана Морозова</strong>
+                            <span>CMO, Cyber Ethno</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="section-header reveal">
+                <label>Тарифы</label>
+                <h2>Инвестиция в уникальность.</h2>
+                <p class="pricing-subtitle">Выберите пакет, который подходит вашему бизнесу</p>
+            </div>
+            <div class="offer-counter reveal">
+                <div class="counter-badge">🔥 Осталось всего <span id="spots-counter">3</span> места по старой цене</div>
+                <div class="counter-timer" id="timer">До повышения цен: <span>05:12:44</span></div>
+            </div>
+            <div class="price-cards">
+                <div class="p-card reveal">
+                    <span class="plan-name">Basic DNA</span>
+                    <div class="plan-badge">Для старта</div>
+                    <div class="price">199 BYN</div>
+                    <div class="price-note">единоразово</div>
+                    <ul class="p-features">
+                        <li>✔️ 5 базовых промптов</li>
+                        <li>✔️ Гайд по использованию</li>
+                        <li>✔️ Поддержка 7 дней</li>
+                        <li class="feature-dim">✖️ LoRA-обучение</li>
+                        <li class="feature-dim">✖️ Обучение команды</li>
+                    </ul>
+                    <div class="p-actions">
+                        <button class="btn-details" data-plan="basic">Подробнее</button>
+                        <a href="#order" class="btn-apple-outline">Выбрать</a>
+                    </div>
+                </div>
+                <div class="p-card featured reveal">
+                    <div class="badge">Рекомендуем</div>
+                    <span class="plan-name">Full DNA</span>
+                    <div class="plan-badge">Оптимальный для брендов</div>
+                    <div class="price">499 BYN</div>
+                    <div class="price-note">≈ до 2000 генераций</div>
+                    <ul class="p-features">
+                        <li>✔️ 25 уникальных промптов</li>
+                        <li>✔️ Полный брендбук для AI</li>
+                        <li>✔️ LoRA-обучение (1 стиль)</li>
+                        <li>✔️ 1 час обучения команды</li>
+                        <li>✔️ 14 дней поддержки</li>
+                    </ul>
+                    <div class="p-actions">
+                        <button class="btn-details" data-plan="full">Подробнее</button>
+                        <a href="#order" class="btn-apple">Начать проект</a>
+                    </div>
+                </div>
+                <div class="p-card reveal">
+                    <span class="plan-name">Enterprise</span>
+                    <div class="plan-badge">Для корпораций</div>
+                    <div class="price">799 BYN</div>
+                    <div class="price-note">индивидуальный подход</div>
+                    <ul class="p-features">
+                        <li>✔️ Безлимитные промпты</li>
+                        <li>✔️ Интеграция в пайплайн</li>
+                        <li>✔️ Персональный AI-инженер</li>
+                        <li>✔️ SLA до 4 часов</li>
+                        <li>✔️ Обучение всей команды</li>
+                    </ul>
+                    <div class="p-actions">
+                        <button class="btn-details" data-plan="enterprise">Подробнее</button>
+                        <a href="#order" class="btn-apple-outline">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="compare-table reveal">
+                <div class="compare-header"><h3>Сравнение возможностей</h3></div>
+                <div class="compare-row"><div class="compare-feature">Количество промптов</div><div class="compare-values"><span>5</span><span>25</span><span>∞</span></div></div>
+                <div class="compare-row"><div class="compare-feature">LoRA-обучение</div><div class="compare-values"><span>—</span><span>✔️ 1 стиль</span><span>✔️ до 3 стилей</span></div></div>
+                <div class="compare-row"><div class="compare-feature">Обучение команды</div><div class="compare-values"><span>—</span><span>✔️ 1 час</span><span>✔️ до 8 часов</span></div></div>
+                <div class="compare-row"><div class="compare-feature">Поддержка</div><div class="compare-values"><span>7 дней</span><span>14 дней</span><span>Приоритетная</span></div></div>
+                <div class="compare-row"><div class="compare-feature">API-интеграция</div><div class="compare-values"><span>—</span><span>—</span><span>✔️</span></div></div>
+            </div>
+            <div class="pricing-footer">
+                <p>Нужна кастомизация или не нашли подходящий тариф? <a href="#order" class="custom-link">Напишите нам</a>, и мы соберём индивидуальное предложение.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="section-header reveal">
+                <label>FAQ</label>
+                <h2>Ответы на вопросы</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-accordion">
+                    <div class="faq-item reveal">
+                        <div class="faq-question">❓ Сколько времени занимает разработка промптов?</div>
+                        <div class="faq-answer">Обычно от 3 до 7 дней в зависимости от сложности. Для тарифа Full DNA – до 5 дней, Enterprise обсуждается индивидуально.</div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question">❓ Что такое LoRA и зачем она нужна?</div>
+                        <div class="faq-answer">LoRA – это дообучение нейросети под ваш стиль. Она позволяет генерировать сотни изображений с идеальным попаданием в бренд-айдентику, без ручных правок.</div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question">❓ Могу ли я использовать промпты в коммерческих целях?</div>
+                        <div class="faq-answer">Да, все промпты передаются с полным правом коммерческого использования. Вы владеете результатами генераций.</div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-question">❓ Какая поддержка входит в тарифы?</div>
+                        <div class="faq-answer">Basic – 7 дней в Telegram, Full – 14 дней приоритетной поддержки, Enterprise – 24/7 с SLA до 4 часов.</div>
+                    </div>
+                </div>
+                <div class="faq-game reveal">
+                    <div class="game-badge">🎮 Игра</div>
+                    <h3>Получите бесплатный промпт</h3>
+                    <p>Ответьте на 3 вопроса о вашем стиле, и мы подарим вам промпт для Midjourney.</p>
+                    <div class="quiz" id="quiz">
+                        <div class="quiz-question">
+                            <p>1. Какой стиль вам ближе?</p>
+                            <label><input type="radio" name="q1" value="minimal"> Минимализм</label>
+                            <label><input type="radio" name="q1" value="cyber"> Киберпанк</label>
+                            <label><input type="radio" name="q1" value="organic"> Органика / бионика</label>
+                        </div>
+                        <div class="quiz-question">
+                            <p>2. Какое настроение предпочитаете?</p>
+                            <label><input type="radio" name="q2" value="cold"> Холодное / футуристичное</label>
+                            <label><input type="radio" name="q2" value="warm"> Тёплое / уютное</label>
+                            <label><input type="radio" name="q2" value="neutral"> Баланс / нейтральное</label>
+                        </div>
+                        <div class="quiz-question">
+                            <p>3. Для чего вам нужны генерации?</p>
+                            <label><input type="radio" name="q3" value="social"> Соцсети / реклама</label>
+                            <label><input type="radio" name="q3" value="product"> Упаковка / продукт</label>
+                            <label><input type="radio" name="q3" value="art"> Арт / концепт-арт</label>
+                        </div>
+                        <button id="get-promo-btn" class="btn-apple">Забрать промпт →</button>
+                        <div id="promo-result" class="promo-result" style="display: none;">
+                            <p>🎉 Ваш промпт готов:</p>
+                            <code id="generated-prompt">/imagine prompt: ...</code>
+                            <button id="copy-prompt-btn" class="btn-apple-outline" style="margin-top: 15px;">Скопировать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="section-header reveal">
+                <label>Связь</label>
+                <h2>Давайте создавать вместе</h2>
+            </div>
+            <div class="contact-grid reveal">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    <p>Мы отвечаем в течение 2 часов в рабочее время</p>
+                    <ul class="contact-list">
+                        <li>📧 <a href="mailto:hello@aidna.by">hello@aidna.by</a></li>
+                        <li>📱 <a href="https://t.me/aidna_bot" target="_blank">Telegram: @aidna_bot</a></li>
+                        <li>💬 <a href="https://wa.me/375291234567" target="_blank">WhatsApp: +375 29 123-45-67</a></li>
+                        <li>📷 <a href="#">Instagram: @aidna.by</a></li>
+                    </ul>
+                    <div class="work-hours">⏰ Пн–Пт: 10:00 – 19:00 (МСК)</div>
+                </div>
+                <div class="contact-form">
+                    <h3>Напишите нам</h3>
+                    <form id="feedback-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="contact-name">Ваше имя</label>
+                                <input type="text" id="contact-name" name="name" placeholder="Анна" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="contact-email">Email или Telegram</label>
+                                <input type="text" id="contact-email" name="contact" placeholder="@username или email" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-type">Тема обращения</label>
+                            <select id="contact-type" name="type">
+                                <option value="question">📝 Вопрос</option>
+                                <option value="order">💼 Заявка на проект</option>
+                                <option value="feedback">⭐ Отзыв</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-message">Сообщение</label>
+                            <textarea id="contact-message" name="message" rows="4" placeholder="Расскажите, что вас интересует..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-apple" id="submit-feedback">
+                            <span class="btn-text">Отправить</span>
+                            <span class="btn-loader"></span>
+                        </button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <span>async / await • fetch • Promise</span>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 4C14 6 13 9.5 13 12.5C13 15.5 14 19 16 21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M8 4C10 6 11 9.5 11 12.5C11 15.5 10 19 8 21" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>AI DNA</span>
+                </div>
+                <p class="footer-tagline">Визуальный код вашего бренда</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="#why-us">Почему мы</a>
+                    <a href="#process">Методология</a>
+                    <a href="#cases">Кейсы</a>
+                    <a href="#pricing">Тарифы</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Соцсети</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="mailto:hello@aidna.by">hello@aidna.by</a>
+                    <a href="https://t.me/aidna_bot">@aidna_bot</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 AI DNA. Все права защищены.</p>
+        </div>
     </footer>
-</div>
 
-<script src="script.js"></script>
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Наверх">↑</button>
+    <a href="https://t.me/aidna_bot" target="_blank" class="chat-bot" aria-label="Написать в Telegram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.76 14.2c-.2.1-.4.06-.56-.04l-1.56-1.18-1.26.98c-.1.08-.2.12-.3.12-.16 0-.3-.06-.4-.18l-.2-.26-1.88-4.8-1.88-4.8c-.1-.26.02-.52.26-.64.24-.12.52-.04.7.12l9.84 7.84c.22.18.28.48.14.72l-1.26 2.2c-.12.2-.34.26-.54.18z" fill="white"/>
+        </svg>
+        <span>Чат</span>
+    </a>
+
+    <script src="script.js"></script>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h2>Оформить заказ</h2>
+                <p>Оставьте свои данные, и мы свяжемся с вами для уточнения деталей DNA-кода.</p>
+            </div>
+            <form id="order-form" class="order-form">
+                <div class="input-group">
+                    <label for="user-name">Как вас зовут?</label>
+                    <input type="text" id="user-name" name="name" placeholder="Имя Фамилия" required>
+                </div>
+                <div class="input-group">
+                    <label for="user-email">Ваш Email</label>
+                    <input type="email" id="user-email" name="email" placeholder="example@mail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="user-tg">Telegram / WhatsApp</label>
+                    <input type="text" id="user-tg" name="contact" placeholder="@username или номер" required>
+                </div>
+                <button type="submit" class="btn-apple">
+                    <span class="btn-text">Отправить заявку</span>
+                    <span class="btn-loader"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="case-modal" class="modal case-modal">
+        <div class="modal-content case-modal-content">
+            <button class="close-modal case-close">&times;</button>
+            <div class="case-modal-body">
+                <h2 id="case-title">Minimalism 2.0</h2>
+                <p id="case-code">MJ v6.1 | [Code: NT-44]</p>
+                <div id="case-full-description" class="case-full-description"></div>
+                <div class="case-gallery" id="case-gallery"></div>
+                <button class="btn-apple order-similar">Заказать такой же →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="plan-modal" class="modal plan-modal">
+        <div class="modal-content plan-modal-content">
+            <button class="close-modal plan-close">&times;</button>
+            <div class="plan-modal-body">
+                <h2 id="plan-modal-title">Basic DNA</h2>
+                <div id="plan-modal-description" class="plan-modal-description"></div>
+                <div id="plan-modal-features" class="plan-modal-features"></div>
+                <a href="#order" class="btn-apple order-from-modal">Выбрать этот тариф</a>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
