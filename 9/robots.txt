@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
+
+Sitemap: https://arinavv.github.io/web-design-lab.github.io/9/
